@@ -1,0 +1,25 @@
+<nav><a routerLink="/book-list"> Back </a></nav>
+<h2>Update Book</h2>
+
+<div class="form_div" *ngIf="book">
+    <form (ngSubmit)="onSubmit()">
+
+        <label for="name">Book Name</label><br>
+        <input type="text" name="name" [(ngModel)]="name" readonly><br>
+        <br>
+
+        <label for="author">Author Name</label><br>
+        <input type="text" name="author" [(ngModel)]="author" readonly><br>
+
+        <label for="isbn">Isbn</label><br>
+        <input type="text" name="isbn" [(ngModel)]="isbn" readonly><br>
+
+        <label for="no_copies">No Copies</label><br>
+        <input type="number" min="1" [(ngModel)]="no_copies" name="no_copies"><br>
+
+        <label for="price">Price</label><br>
+        <input type="number" min="1" [(ngModel)]="price" name="price"><br>
+
+        <input type="submit" value="Update">
+    </form>
+</div>

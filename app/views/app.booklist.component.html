@@ -1,0 +1,33 @@
+<ul>
+    <nav>
+        <a routerLink="/insert-book" routerLinkActive="active">Insert</a>
+    </nav>
+    <li *ngFor="let book of books">
+        <!--i put some bg-color in nav and a tag so that way i use here <nav><a> tag's here..-->
+        <nav>
+            <a>
+                <div>
+                    <nav align="right">
+                        <a> <img (click)="delete(book); $event.stopPropagation()" src="app/assets/images/delete.png" alt="Mountain View" style="width:30px;height:30px;"></a>
+                        <a routerLink="/update-book/{{book.isbn}}" routerLinkActive="active"><img src="app/assets/images/edit.png" alt="Mountain View" style="width:30px;height:30px;"></a>
+                    </nav>
+                    <nav>
+                        <a routerLink="/book-order/{{book.isbn}}" routerLinkActive="active">
+                            <h2>{{book.name}}</h2>
+                        </a>
+                    </nav>
+                    <div>
+                        <span class='width:20%'> <label>Author Name: </label> {{book.author}}</span>,
+                        <span class='width:20%'> <label>Isbn: </label> {{book.isbn}}</span>,
+                        <span class='width:20%'> <label>No Compies: </label> {{book.no_copies}}</span>,
+                        <span class='width:20%'> <label>Price: </label> {{book.price}}</span>
+                    </div>
+
+                </div>
+            </a>
+        </nav>
+        <br>
+
+    </li>
+
+</ul>

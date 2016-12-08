@@ -1,0 +1,20 @@
+ 
+    <nav><a routerLink="/book-list"> Back </a></nav>
+    <div class='table'  *ngIf="book">
+      <div class='rowGroup' >
+        <span class='cell'><h1>{{book.name}}</h1></span>
+      </div>
+      <div class='rowGroup' >
+        <span class='cell'>Autho:  {{book.author}}</span>
+      </div>
+      <div class='rowGroup' >
+        <span class='cell'>Price:   {{book.price}}</span>
+      </div>
+      <div class='rowGroup' >
+        <span class='cell'>Copies Available:  {{book.no_copies}}</span>
+      </div>
+      <div  id='done' class='rowGroup' >
+          <nav><input type="number"  name="quantity" [(ngModel)]="quantity"  min="1" max="{{book.no_copies}}">
+          <a (click)="onDone()"> Done </a></nav>
+      </div>
+    </div> 
