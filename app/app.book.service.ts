@@ -2,7 +2,7 @@ import {Book} from './app.book';
 import {Injectable} from '@angular/core';
 
 
-let BOOKS: Book[] = [
+export const BOOKS: Book[] = [
      { name: 'Android', author: 'ALi Jan', isbn: '159-3689-987', no_copies: 1000, price:100 },
   { name: 'C++', author: 'ALi Jan', isbn: '259-3689-987', no_copies: 1000, price:200 },
   { name: 'JUnit', author: 'ALi Jan', isbn: '359-3689-987', no_copies: 1000, price:300 },
@@ -30,7 +30,6 @@ export class BookService{
   }
 
  // update the book during shoping
-
  updateBook(book:Book):void{
     for(let i=0; i<BOOKS.length; i++){
        if(BOOKS[i].isbn == book.isbn){
